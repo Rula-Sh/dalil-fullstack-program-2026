@@ -1,3 +1,90 @@
+/* ---------------------------------------- Inheritance ---------------------------------------- */
+
+/* Single Inheritance: 
+   Create a base class Product with properties Name and Price, and a method DisplayInfo(). 
+   Derive a class Electronics that adds a WarrantyYears property and an ElectronicsInfo() method. 
+   Create an object and call both methods. */
+/* Hierarchical Inheritance: 
+   Using the same Product base class, also create a Clothing class that inherits from Product and adds a Size property. 
+   Demonstrate that both Electronics and Clothing can access DisplayInfo() without redefining it. */
+
+class Product
+{
+    public string Name { get; set; }
+    public int Price { get; set; }
+
+    public Product(string name, int price)
+    {
+        Name = name;
+        Price = price;
+    }
+
+    public void DisplayInfo()
+    {
+        Console.Write($"The {Name} is ${Price}");
+    }
+}
+
+class Electronics : Product
+{
+    public int WarrantyYears { get; set; }
+
+    public Electronics(string name, int price, int warranty) : base(name, price)
+    {
+        WarrantyYears = warranty;
+    }
+    public void ElectronicsInfo()
+    {
+        this.DisplayInfo();
+
+        Console.WriteLine($" and has {WarrantyYears} years of warranty.");
+    }
+}
+
+class Clothing : Product
+{
+    public string Size { get; set; }
+
+    public Clothing(string name, int price, string size) : base(name, price)
+    {
+        Size = size;
+    }
+
+    public void ClothingInfo()
+    {
+        this.DisplayInfo();
+
+        Console.WriteLine($" and its size is {Size}.");
+    }
+}
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        Console.WriteLine("Display chair info:");
+        Product chair = new Product("Chair", 15);
+        chair.DisplayInfo();
+        Console.WriteLine("\n");
+
+        Console.WriteLine("Display mouse electronic info:");
+        Electronics mouse = new Electronics("Mouse", 5, 2);
+        mouse.ElectronicsInfo();
+        Console.WriteLine("Display mouse product info:");
+        mouse.DisplayInfo();
+        Console.WriteLine("\n");
+
+        Console.WriteLine("Display jacket clothing info:");
+        Clothing jacket = new Clothing("Jacket", 20, "L");
+        jacket.ClothingInfo();
+        Console.WriteLine("Display jacket product info:");
+        jacket.DisplayInfo();
+        Console.WriteLine("\n");
+
+    }
+}
+
+
 /*Write a C# Console Application to manage the inventory of a small store.
 Requirements
 - Ask the user to enter the number of products.
