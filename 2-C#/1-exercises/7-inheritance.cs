@@ -60,7 +60,7 @@ class Clothing : Product
 
 class Program
 {
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
         Console.WriteLine("Display chair info:");
         Product chair = new Product("Chair", 15);
@@ -85,92 +85,104 @@ class Program
 }
 
 
-/*Write a C# Console Application to manage the inventory of a small store.
-Requirements
-- Ask the user to enter the number of products.
-- Store the prices and quantities of the products using arrays.
-- Use a 2D array to store product information: o Column 1 → Price o Column 2 → Quantity
-- Create a method CalculateTotal() that receives the price and quantity and returns the total value of the product.
-- Use if-else to classify each product: o Total< 100 → Low Value o 100–500 → Medium Value o 500 → High Value
-- Use switch to display a message based on the product category.
-- find: o The most expensive product. o The total number of items in stock.
-- Display a report similar to: Product 1 Price: 50 Quantity: 4 Total Value: 200 Category: Medium Value Message: Normal Product */
+/* ----------------------------------------- In Lecture ----------------------------------------- */
 
+/*Create a C# Console Application to manage employees in a company. Requirements:
+    1- Create a class called Employee with the following private fields: o name o id o salary
+    2- Create appropriate public methods to: o Set employee information. o Display employee information.
+    3- Create a method called CalculateBonus() that returns the employee's bonus: o Normal bonus = 10% of salary.
+    4- Create another version of CalculateBonus() : o This method calculates the bonus based on the percentage provided.
+    5- Create a class called Manager that inherits from Employee.
+    6- Add a private field to Manager: o teamSize
+    7- In Manager, override or create a method to display the manager's information, including: o Name o ID o Salary o Team size
+    8- Create objects from both classes: o One Employee object. o One Manager object.
+    9- Use the objects to: o Display their information. o Calculate the normal bonus. o Calculate a bonus using a custom percentage. */
 
-
-using System;
-
-class Program
+class Employee
 {
-    // -Create a method CalculateTotal() that receives the price and quantity and returns the total value of the product.
-    public static int CalculateTotal(int price, int quantity)
+    // 1- Create a class called Employee with the following private fields: o name o id o salary
+    private int id;
+    private string name;
+    private double salary;
+
+    public int Id
     {
-        return price * quantity;
+        get => id;
+        set => id = value;
+    }
+    public string Name
+    {
+        get => name;
+        set => name = value;
+    }
+    public double Salary
+    {
+        get => salary;
+        set => salary = value;
     }
 
-    public static string CategorizeProduct(int price, int quantity)
+    // 2- Create appropriate public methods to: o Set employee information.o Display employee information.
+    public Employee(int id, string name, double salary)
     {
-        int total=0;
-        if (total < 100)
-        {
-            return"Low Value";
-        }
-        else if (total > 100 && total < 500)
-        {
-            return "Medium Value";
-        }
-        else
-        { //if (total > 500)
-            return "High Value";
-        }
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }        
+    public string DisplayEmployeeInformation()
+    {
+        return $"Employee {name} with ID {id} has the salary of {salary}";
     }
-
-    static void Main()
-    {
-
-        //-Ask the user to enter the number of products.
-
-        Console.WriteLine("Enter the number of products");
-        int prodNum = int.Parse(Console.ReadLine());
-
-        // - Store the prices and quantities of the products using arrays.
-        // - Use a 2D array to store product information: o Column 1 → Price o Column 2 → Quantity
-
-        int[,] prodArr = new int[prodNum, 2];
-        for (int i = 0; i < prodNum; i++)
-        {
-            Console.WriteLine($"Enter product #{i} price");
-            prodArr[i,0] = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Enter product #{i} quantity");
-            prodArr[i,1] = int.Parse(Console.ReadLine());
-        }
-
-
-        // - Use if-else to classify each product: o Total< 100 → Low Value o 100–500 → Medium Value o 500 → High Value
         
+    // 3- Create a method called CalculateBonus() that returns the employee's bonus: o Normal bonus = 10% of salary.
+    public double CalculateBonus()
+    {
+        return salary * 0.1;
+    }
+        
+    // 4- Create another version of CalculateBonus() : o This method calculates the bonus based on the percentage provided.
+    public double CalculateBonus(double bonus)
+    {
+        return salary * bonus;
+    }
 
-        // - Use switch to display a message based on the product category.
+}
 
+// 5- Create a class called Manager that inherits from Employee.
+class Manager : Employee
+{
+    // 6- Add a private field to Manager: o teamSize
+    private int teamSize;
 
+    public int TeamSize
+    {
+        get => teamSize;
+        set => teamSize = value;
+    }
+        
+    public Manager(int id, string name, double salary, int teamSize) : base(id, name, salary)
+    {
+        this.teamSize = teamSize;
+    }
 
-        // -find: o The most expensive product. o The total number of items in stock.
-        int maxVal = 0;
-        for (int i = 0; i <= prodNum; i++)
-        {
-            if (prodArr[i, 0] > maxVal)
-            {
-                maxVal = prodArr[i, 0];
-            }
-        }
-
-        int totalQuantity = 0;
-        for (int i = 0; i <= prodNum; i++)
-        {
-            totalQuantity += prodArr[i, 1];
-        }
-
-        // - Display a report similar to: Product 1 Price: 50 Quantity: 4 Total Value: 200 Category: Medium Value Message: Normal Product 
+    // 7- In Manager, override or create a method to display the manager's information, including: o Name o ID o Salary o Team size
+    public string DisplayManagerInformation()
+    {
+        return DisplayEmployeeInformation() + $" and a team size of: {teamSize}";
     }
 }
 
+class Program
+{
+    static void Main(string[] args)
+    {
+        // 8- Create objects from both classes: o One Employee object. o One Manager object.
+        Manager manager = new Manager(2, "Qasem", 500, 4);
+        Employee employee = new Employee(2, "Ahmad", 500);
 
+        // 9- Use the objects to: o Display their information. o Calculate the normal bonus. o Calculate a bonus using a custom percentage. */
+        Console.WriteLine(manager.DisplayManagerInformation());
+        Console.WriteLine(employee.DisplayEmployeeInformation());
+
+        Console.WriteLine($"{employee.Name} employee received {employee.CalculateBonus(0.2)} bonus");
+    }
+}
