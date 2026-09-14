@@ -268,3 +268,68 @@ class Program
         Console.WriteLine();
     }
 }
+
+/* ---------------------------------- In Another Lecture Group ---------------------------------- */
+
+/* Develop a C# Course Management System that manages courses data stored in parallel lists and queries them using LINQ query syntax. Requirements:
+   1- Display the names of the courses that are currently available.
+   2- Display the first course whose duration is greater than 30 hours.
+   3- Display the names of the three longest courses.  
+   4- Create a new list containing only the IDs of unavailable courses. */
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> courseIds = new List<int> { 101, 102, 103, 104, 105, 106 };
+        List<string> coursesNames = new List<string> { "CSharp", "SQL", "HTML", "JavaScript", "Python", "React" };
+        List<string> coursesLevels = new List<string> { "Advanced", "Beginner", "Beginner", "Advanced", "Intermediate", "Advanced" };
+        List<int> coursesDurations = new List<int> { 40, 20, 15, 35, 30, 45 };
+        List<bool> availableCourses = new List<bool> { true, true, false, true, false, true };
+
+        //1- Display the names of the courses that are currently available.
+        var availableCoursesNames = from names in coursesNames
+                                    join isAvailable in availableCourses
+                                    on coursesNames.IndexOf(names) equals availableCourses.IndexOf(isAvailable)
+                                    where isAvailable == true
+                                    select names;
+        Console.WriteLine("Available Courses:");
+        foreach (var course in availableCoursesNames)
+        {
+            Console.WriteLine(course);
+        }
+
+        //2- Display the first course whose duration is greater than 30 hours.
+        var firstCourseDuratioAbove30 = (from course in coursesNames
+                                            join duration in coursesDurations
+                                            on coursesNames.IndexOf(course) equals coursesDurations.IndexOf(duration)
+                                            where duration > 30
+                                            select course).FirstOrDefault();
+        Console.WriteLine($"First course with duration greater than 30: {firstCourseDuratioAbove30}");
+
+        //3- Display the names of the three longest courses.
+        var threeLongestCourses = (from course in coursesNames
+                                    join duration in coursesDurations
+                                    on coursesNames.IndexOf(course) equals coursesDurations.IndexOf(duration)
+                                    orderby duration descending
+                                    select course).Take(3);
+        Console.WriteLine("Three Longest Courses:");
+        foreach (var course in threeLongestCourses)
+        {
+            Console.WriteLine(course);
+        }
+
+        // 4- Create a new list containing only the IDs of unavailable courses.
+        var unavailableCoursesIds = from courseId in courseIds
+                                    join isAvailable in availableCourses
+                                    on courseIds.IndexOf(courseId) equals availableCourses.IndexOf(isAvailable)
+                                    where isAvailable == false
+                                    select courseId;
+        Console.WriteLine("Unavailable Course IDs:");
+        foreach (var courseId in unavailableCoursesIds)
+        {
+            Console.WriteLine(courseId);
+        }
+    }
+}
