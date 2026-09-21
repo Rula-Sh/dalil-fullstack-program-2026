@@ -1,5 +1,5 @@
 /*
-    -- The exercise took event on https://kahoot.it/ website
+    -- The exercise took place on https://kahoot.it/ website
     Q1: Having an index on a column always makes all SQL operations faster.
         A) True.
         B) False.

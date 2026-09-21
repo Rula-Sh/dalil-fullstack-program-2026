@@ -85,7 +85,7 @@ class Program
 }
 
 
-/* ----------------------------------------- In Lecture ----------------------------------------- */
+/* ------------------------------- In Lecture ------------------------------- */
 
 /*Create a C# Console Application to manage employees in a company. Requirements:
     1- Create a class called Employee with the following private fields: o name o id o salary

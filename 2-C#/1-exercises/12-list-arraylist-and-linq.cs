@@ -25,6 +25,7 @@ class Program
             Console.WriteLine($"ID: {customer.Id}, Name: {customer.Name}, Phone Number: {customer.PhoneNumber}");
         }
 
+
 /* ----------------------------------------- Array List ----------------------------------------- */
 
 /* Using the List<Customer> created in the previous exercise, write a LINQ query to:
@@ -90,7 +91,7 @@ class Order
 
 
 /* -------------------------------------------- LINQ -------------------------------------------- */
-/* ----------------------------------------- In Lecture ----------------------------------------- */
+/* ------------------------------- In Lecture ------------------------------- */
 
 /* Develop a C# Online Shopping System that manages different types of products and calculates their final prices. Requirements:
     1- Create an enum named ProductType: Electronic, Clothing, Food
@@ -269,7 +270,8 @@ class Program
     }
 }
 
-/* ---------------------------------- In Another Lecture Group ---------------------------------- */
+
+/* ------------------------ In Another Lecture Group ------------------------ */
 
 /* Develop a C# Course Management System that manages courses data stored in parallel lists and queries them using LINQ query syntax. Requirements:
    1- Display the names of the courses that are currently available.

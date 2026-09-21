@@ -54,7 +54,7 @@ while (choice != 4)
 }
 
 
-/* ----------------------------------------- In Lecture ----------------------------------------- */
+/* ------------------------------- In Lecture ------------------------------- */
 
 /* Write a C# Console Application for a smart parking system. The program should ask the user to enter:
     - Driver name

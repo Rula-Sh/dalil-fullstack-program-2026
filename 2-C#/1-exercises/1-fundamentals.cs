@@ -25,6 +25,7 @@ Console.Write("the sum of " + number1 + " and " + number2 + " is: " + sum);
 double avg = sum / 2.0;
 Console.WriteLine("and the is: " + avg);
 
+
 /* ------------------------------------- Boxing & Unboxing ------------------------------------- */
 
 /* 1. Write a program that stores the character 'A' in an object variable using boxing, then prints its value and ASCII equivalent. */
@@ -34,7 +35,8 @@ object o = a;
 int ascii = a;
 Console.WriteLine(o + "has the value of" + ascii + "in ASCII");
 
-/* ----------------------------------------- In Lecture ----------------------------------------- */
+
+/* ------------------------------- In Lecture ------------------------------- */
 
 /* Write a C# program that:
     1- Creates a variable to store the student's name.

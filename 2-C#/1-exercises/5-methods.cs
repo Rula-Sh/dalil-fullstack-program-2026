@@ -55,7 +55,7 @@ class Program
 }
 
 
-/* ----------------------------------------- In Lecture ----------------------------------------- */
+/* ------------------------------- In Lecture ------------------------------- */
 
 /* Write a C# Console Application to manage the inventory of a small store. Requirements:
     1- Ask the user to enter the number of products.
