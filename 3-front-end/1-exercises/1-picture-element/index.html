@@ -1,0 +1,50 @@
+<!-- ! || html:5 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picutre Element</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>Picutre Element to Support Different Formats</h1>
+      <picture>
+        <source srcset="images/different-formats/cats.jpg" />
+        <source srcset="images/different-formats/cats.web" />
+        <img
+          src="images/different-formats/cats.png"
+          type
+          alt="Two cats on a sidewalk"
+          width="500"
+        />
+      </picture>
+
+      <h1>Picutre Element to Support Different Bandwidths</h1>
+      <picture>
+        <source
+          media="(min-width: 1500px)"
+          srcset="images/different-bandwidths/adult-cat.png"
+          height="300px"
+        />
+        <source
+          media="(min-width: 700px)"
+          srcset="images/different-bandwidths/young-cat.png"
+          height="300px"
+        />
+        <source
+          media="(min-width: 0px)"
+          srcset="images/different-bandwidths/kitten.png"
+          height="300px"
+        />
+        <img
+          src="images/different-formats/cats.png"
+          alt="Two cats on a sidewalk"
+          width="500"
+        />
+      </picture>
+    </main>
+    <footer></footer>
+  </body>
+</html>
