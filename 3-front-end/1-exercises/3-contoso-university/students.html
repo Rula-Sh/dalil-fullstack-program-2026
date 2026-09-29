@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoso University - Students</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Contoso University</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a> |</li>
+          <li><a href="courses.html">Courses</a> |</li>
+          <li><a href="students.html">Students</a> |</li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="">
+        <fieldset>
+          <legend>Course Information</legend>
+          <div>
+            <label for="courseNum">Course Number: </label>
+            <input
+              type="text"
+              name="courseNum"
+              id="courseNum"
+              placeholder="e.g.1050"
+            />
+          </div>
+          <div>
+            <label for="courseTitle">Course Title: </label>
+            <input
+              type="text"
+              name="courseTitle"
+              id="courseTitle"
+              placeholder="Enter course title"
+            />
+          </div>
+          <div>
+            <label for="credit">Credits: </label>
+            <input type="number" name="credit" id="credit" placeholder="" style="width: 50px;" />
+          </div>
+          <div>
+            <label for="department">Department: </label>
+            <input
+              list="browsers"
+              name="department"
+              id="department"
+              placeholder="Choose or type a department"
+            />
+            <datalist id="browsers">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </datalist>
+          </div>
+          <div>
+            <label for="startDate">Start Date: </label>
+            <input
+              class="startDate"
+              type="date"
+              name="startDate"
+              id="startDate"
+              placeholder=""
+            />
+          </div>
+
+          <div>
+            <label for="courseType">Course Type: </label>
+            <input
+              class="radio"
+              type="radio"
+              name="courseType"
+              id="Online"
+              value="Online"
+            />
+            <label for="Online">Online</label>
+            <input
+              class="radio"
+              type="radio"
+              name="courseType"
+              id="courseType"
+              value="Onsite"
+            />
+            <label for="Onsite">Onsite</label>
+          </div>
+          <div>
+            <label for="AdditionalOpt">Additional Options: </label>
+            <input
+              class="checkbox"
+              type="checkbox"
+              name="RecordedLectures"
+              id="Online"
+              value="Online"
+            />
+            <label for="RecordedLectures">Recorded Lectures</label>
+            <input
+              class="checkbox"
+              type="checkbox"
+              name="AdditionalOpt"
+              id="AdditionalOpt"
+              value="Onsite"
+            />
+            <label for="CourseMaterials">Course Materials</label>
+          </div>
+          <div>
+            <label for="CourseDescription">Course Description:</label>
+            <br />
+            <textarea
+              name="CourseDescription"
+              id="CourseDescription"
+              placeholder="Enter course description"
+              style="width: 250px; height: 70px"
+            ></textarea>
+          </div>
+
+          <button type="submit">Create Course</button>
+          <button type="reset">Clear</button>
+        </fieldset>
+      </form>
+    </main>
+    <footer></footer>
+  </body>
+</html>

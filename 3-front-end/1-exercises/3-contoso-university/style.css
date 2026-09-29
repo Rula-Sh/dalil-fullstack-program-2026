@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+nav {
+  margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 1px;
+}
+
+thead > tr > td {
+  text-align: center;
+  font-weight: bold;
+}
+
+li {
+  display: inline-block;
+}
+
+.bullet {
+  margin: 16px 0px;
+  padding-inline-start: 40px;
+}
+
+.bullet > li {
+  display: list-item;
+}
+
+a {
+  color: rgb(104, 37, 212);
+}
+
+fieldset {
+  margin: 5px;
+  padding: 20px;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 2px;
+}
+
+.radio,
+.checkbox,
+.startDate {
+  display: inline;
+}
+label {
+  margin-right: 5px;
+}
+
+button {
+  padding: 2px 4px;
+}
