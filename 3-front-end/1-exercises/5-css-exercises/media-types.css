@@ -1,0 +1,23 @@
+/* 
+    What are the different CSS media types? 
+    Identify and explain each media type, providing an example of when each would be applied in a responsive web project.
+
+    all    =>	Used for all media type devices
+    print  =>	Used for print preview mode
+    screen =>	Used for computer screens, tablets, and smart-phones
+*/
+
+@media all {
+  body { font-family: sans-serif; }
+}
+
+@media screen and (max-width: 768px) {
+  .nav { display: none; }
+  .hamburger { display: block; }
+}
+
+@media print {
+  .nav, .sidebar { display: none; }
+  body { font-size: 12pt; color: #000; background: #fff; }
+  a::after { content: " (" attr(href) ")"; } /* this adds the link after a hyper link: Example Site (https://example.com) */
+}
