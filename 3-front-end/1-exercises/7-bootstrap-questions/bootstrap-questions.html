@@ -1,0 +1,95 @@
+<!--  
+    The following questions covers Bootstrap basics and components
+
+    Q1: What is Bootstrap, and what is it built on?
+    A:  Bootstrap is a free, open-source front-end framework for building websites and web apps quickly. 
+        It's built on pure CSS, so developers apply pre-defined classes directly to HTML elements to get fast, consistent, professional styling without writing custom CSS from scratch.
+
+    Q2: What changed in Bootstrap 5 that makes it the recommended version for this training?
+    A:  Faster, more efficient components; modernized, more customizable stylesheets; the jQuery dependency was dropped for leaner performance;
+        and it added enhanced utility classes plus new layout features.
+
+    Q3: What are the two primary ways to add Bootstrap to a project?
+    A:  Method 1 – Download: get the compiled CSS/JS files from getbootstrap.com and link them locally. 
+        Method 2 – CDN: link Bootstrap directly from a Content Delivery Network with no download – ideal for quick setup and prototyping.
+
+    Q4: When integrating Bootstrap via CDN, where do the CSS and JS tags go, and why does it matter?
+    A:  The CSS <link> tag goes in the <head>; the JavaScript <script> tag goes right before the closing </body> tag. 
+        CSS loads first so the page is styled as it renders; scripts load last so they don't block the HTML from displaying.
+
+    Q5: What is responsive web design, and what design philosophy is Bootstrap built on?
+    A:  Responsive design is building websites that automatically adapt their layout and appearance to any screen size, from phones to desktops.
+        Bootstrap is built with a "mobile-first" responsive philosophy at its core.
+
+    Q6: Discussion: What are CSS media types, and when does each apply?
+    A:  Media types (e.g. screen, print, speech, all) let CSS target specific output devices.
+        screen for browsers/apps, print for printed pages, speech for screen readers. 
+        Combined with media features like max-width, they're the basis for writing responsive rules per device.
+
+    Q7: What naming pattern does Bootstrap use for text and background color utilities?
+    A:  text-{color} for text color (e.g. text-primary) and bg-{color} for background color (e.g. bg-success). 
+        Common names include primary, secondary, success, warning, danger, info, dark and light.
+
+    Q8: What do .border-top-0, .border-bottom-0, .border-end-0 and .border-start-0 do?
+    A:  Each removes the border from one specific edge of an element – top, bottom, end (right) or start (left) respectively.
+
+    Q9: What's the difference between Bootstrap's margin (.m) and padding (.p) utilities?
+    A:  Margin (.m) adds outer spacing around an element, creating distance from surrounding elements. 
+        Padding (.p) adds inner spacing within an element, between its content and its border.
+
+    Q10: How do directional spacing classes work – for example, what does mt-3 mean?
+    A:   Combine a direction letter (t=top, b=bottom, e=end, s=start) with a size from -0 to -5. 
+         mt-3 means "margin-top, size 3," which equals 1.0rem of top margin.
+
+    Q11: What is the foundation of Bootstrap's layout system, and how many columns does a row use?
+    A:   The Bootstrap grid system, built from containers, rows and columns. 
+         Every row divides into 12 equal columns that developers combine to build flexible layouts 
+         (e.g. two 6-column sections make a full row).
+
+    Q12: What are the three essential building blocks of the Bootstrap grid?
+    A:   Container (wraps all grid content, sets max width, centers the layout), 
+         Row & Column (rows group columns horizontally; columns define width allocation), 
+         and Breakpoints (screen-width thresholds that trigger layout changes).
+
+    Q13: Name Bootstrap's six responsive breakpoints and their class infixes.
+    A:   X-Small (xs, <576px), Small (sm, ≥576px), Medium (md, ≥768px), Large (lg, ≥992px), Extra Large (xl, ≥1200px), Extra Extra Large (xxl, ≥1400px).
+
+    Q14: What's the difference between .container and .container-fluid?
+    A:   .container is fixed-width – it sets a max-width per breakpoint and centers content with padding on both sides. 
+         .container-fluid is full-width and spans the entire viewport at every screen size – useful for edge-to-edge layouts.
+
+    Q15: What does an offset-{breakpoint}-{n} class do, and why use it?
+    A:   It pushes a column to the right by n grid columns at the given breakpoint. 
+         It's commonly used to center content or create deliberate white space in a layout.
+
+    Q16: List the Bootstrap components covered in this module.
+    A:   Navbar, Cards, Forms, Alerts, Carousel, Tables and Spinners.
+
+    Q17: What is a navbar for, and what are the general steps to add one from the docs?
+    A:   A navbar helps users move between pages on a site. 
+         To add one: open the Components section on the Bootstrap site, open the Navbar page, choose a style that fits your design, then copy the code into your HTML.
+
+    Q18: What is a Bootstrap Card, and what kinds of content can it hold?
+    A:   A flexible, extensible content container that can hold images, text, links and buttons – useful for course listings, product items, profiles and more. 
+         Cards can be customized with headers, footers and contextual background colors.
+
+    Q19: What form elements does Bootstrap provide, and what were they used to build in this module?
+    A:   Responsive, accessible input fields, select menus, checkboxes, radio buttons and file uploaders – used to build a Register / submission forms.
+       
+    Q20: What's the difference between .spinner-border and .spinner-grow?
+    A:   .spinner-border renders a circular rotating-border loading animation. 
+         .spinner-grow is an alternative that uses a pulsing/growing animation for a different visual style.
+
+    Q21: Why does a spinner typically include a .visually-hidden "Loading..." span?
+    A:   It's an accessibility best practice: it hides the text visually, sighted users just see the spinner,
+          while keeping it available to screen readers, so users relying on assistive technology still know a process is loading.
+
+    Q22: What are Bootstrap Alerts used for, and what should you check before adding an interactive component?
+    A: Alerts are contextual feedback messages that communicate the result of a user's action (success, error, warning, info). 
+       Every interactive Bootstrap component needs its own supporting JavaScript snippet – always check that component's documentation page for the exact script required.
+
+    Q23: What is a Carousel used for, and what does it require to function?
+    A:   A carousel ("slider") cycles through a series of images or text slides, automatically or by user interaction – commonly used in homepage hero sections and portfolios. 
+         It requires Bootstrap's JavaScript bundle (bootstrap.bundle.min.js) to work.
+
+ -->
