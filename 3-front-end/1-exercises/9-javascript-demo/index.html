@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 id="main-title">Hello World</h1>
+    <div id="container">
+      <p class="info" id="first">First paragraph</p>
+      <p class="info" id="second">Second paragraph</p>
+      <p class="info" id="third">To be replaced</p>
+    </div>
+    <button id="myBtn" class="btn btn-danger">Click Me</button>
+    <br />
+    <form action="">
+      <label>
+        Enter Name:
+        <input type="text" id="input1" />
+      </label>
+      <label>
+        Upper Case Result:
+        <input type="text" id="input2" />
+      </label>
+    </form>
+    <br />
+    <!-- bubbling -->
+    <div id="card" style="padding: 30px; background-color: #fdd">
+      Card
+      <button id="btn" class="btn btn-danger">Click</button>
+    </div>
+
+    <!-- Prevent Default -->
+    <form id="signupForm" action="/register" method="post">
+      <label>
+        Name:
+        <input type="text" id="username" />
+      </label>
+      <span id="nameError" style="color: red"></span>
+      <br />
+      <label>
+        Age:
+        <input type="number" id="age" />
+      </label>
+      <span id="ageError" style="color: red"></span>
+      <br />
+      <button type="submit" class="btn btn-warning">Register</button>
+    </form>
+
+    <script>
+      // Access html document => Access html element => Modify the element
+      const title = document.getElementById("main-title"); // <h1 id="main-title" style="color: red;">Updated Title</h1>
+      title.innerHTML = "Updated Title";
+      title.style.color = "red";
+
+      let button = document.getElementsByClassName("btn")[0]; // returns an HTMLCollection without the [0], this will return the first button with class btn in the doc
+      button.style.color = "black";
+
+      document.getElementsByTagName("p")[1].innerHTML =
+        '2nd paragraph edited using .getElementsByTagName("p")[1]';
+
+      document.querySelector(".info").innerHTML =
+        '1st paragraph edited using .querySelector(".info")'; // gets the first element or null
+
+      document
+        .querySelectorAll("p")
+        .forEach((e) => (e.style.backgroundColor = "lightgrey"));
+
+      // create element
+      let appenedPara = document.createElement("p");
+      appenedPara.innerText = "New Paragraph using innerText \n";
+      //or
+      const text = document.createTextNode(
+        "New Paragraph using .createTextNode",
+      );
+      appenedPara.appendChild(text);
+
+      let container = document.getElementById("container");
+      container.appendChild(appenedPara);
+
+      // insert element
+      let firstPara = document.getElementById("first");
+
+      let insertedPara = document.createElement("p");
+      insertedPara.innerText =
+        "Inserted Paragraph using .insertBefore(new, child)";
+      container.insertBefore(insertedPara, firstPara);
+
+      // replace element
+      let thirdPara = document.getElementById("third");
+      let replacementPara = document.createElement("p");
+      replacementPara.innerText =
+        "Inserted Paragraph as a replacement using .replaceChild(new, child)";
+      container.replaceChild(replacementPara, thirdPara);
+
+      // events
+      button.addEventListener("click", buttonClicked); // dont use the () here, as the function will be called instantly.
+
+      function buttonClicked() {
+        alert("Button Clicked!");
+      }
+
+      let input1 = document.querySelector("#input1");
+      let input2 = document.querySelector("#input2");
+
+      input1.addEventListener("change", upperCaseText);
+
+      function upperCaseText() {
+        input2.value = input1.value.toUpperCase();
+      }
+
+      // bubbling
+      // notice that i did not use getElementById to get the card and the btn ----------------------------------------------------------------
+      card.addEventListener("click", () => console.log("2) Card Clicked")); // will also call the doc EventListener
+      document.addEventListener("click", () =>
+        console.log("3) document Clicked"),
+      );
+      btn.addEventListener("click", (event) => {
+        event.stopPropagation(); // stops event bubbling (wont call the card and doc EventListener)
+        console.log("1) Button Clicked");
+      });
+
+      // prevent default
+
+      signupForm.addEventListener("submit", (event) => {
+        nameError.textContent = "";
+        ageError.textContent = "";
+
+        let isValid = true;
+
+        if (username.value.trim().length < 3) {
+          nameError.textContent = "Name must be at least 3 characters";
+          isValid = false;
+        }
+
+        if (age.value < 18) {
+          ageError.textContent = "Age must be over 18";
+          isValid = false;
+        }
+
+        if (!isValid) {
+          event.preventDefault(); // prevents from submitting the form in this example when the input is invalid
+        }
+      });
+    </script>
+  </body>
+</html>
