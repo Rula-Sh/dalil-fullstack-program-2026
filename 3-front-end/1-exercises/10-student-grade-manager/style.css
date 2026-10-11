@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 40px;
+}
+
+.container {
+  width: 700px;
+  max-width: 100%;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form div {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* added from me */
+
+html,
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+tr th {
+  text-align: center;
+}
+
+#addBtn {
+  align-self: flex-end;
+}
+
+.searchNClear {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.searchNClear input {
+  width: 80%;
+}
+
+#clearBtn {
+  background-color: rgb(175, 0, 0);
+}
+
+#nameError,
+#scoreError {
+  color: red;
+  font-size: 14px;
+}
+
+#tableEmpty {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+}
+
+.gradeLabel {
+  text-align: center;
+  border-radius: 50px;
+  width: fit-content;
+  align-self: center;
+  padding: 5px 10px;
+  margin: 0px;
+  font-size: 15px;
+}
+
+.green {
+  background-color: lightgreen;
+  color: green;
+}
+
+.orange {
+  background-color: rgb(250, 206, 124);
+  color: rgb(103, 67, 0);
+}
+
+.red {
+  background-color: pink;
+  color: rgb(255, 73, 73);
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th:nth-child(1) {
+  width: 40%;
+}
+th:nth-child(2) {
+  width: 15%;
+}
+th:nth-child(3) {
+  width: 30%;
+}
+th:nth-child(4) {
+  width: 20%;
+}
