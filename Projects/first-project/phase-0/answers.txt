@@ -1,0 +1,55 @@
+--------------------------------------------- Topic 1 ---------------------------------------------
+
+Q1: What is the difference between JSON and a JavaScript object? 
+A:  A JavaScript object is a data structure stored in memory, while JSON is a text-based data format used strictly for transmitting and storing data.
+
+Q2: When do we use JSON.stringify and when do we use JSON.parse? 
+A:  JSON.stringify() to convert a JavaScript object into a JSON string (sending/storing data).
+    JSON.parse() to convert a JSON string back into a JavaScript object (reading data).
+
+--------------------------------------------- Topic 2 ---------------------------------------------
+
+Q1: Why do we need await twice when we call fetch and read the JSON? 
+A:  Because fetch() and json() return promises, fetch() gets the response and json() gets the body as json
+
+Q2: What happens if the server answers with 404? Does fetch throw an error by itself? (search for response.ok)
+A:  404 means that the server did not find the requested resource, fetch did not throw that error, it returned the server response contains 404
+
+--------------------------------------------- Topic 3 ---------------------------------------------
+
+
+Q1: What is the difference between GET, POST, PUT, and DELETE? What do we use each one for? 
+A:  GET: Gets a specific resource
+    POST: Create a new resource
+    PUT: Update an existing resource (or create a new one if it doesn't exist).
+    DELETE: Delete the specified resource.
+
+Q2: Where do we send the data in a POST, and which status code do we return when we add something new?
+A:  Whe data is sent encoded within the request body.and the status code 201 is returned when adding something new.
+
+--------------------------------------------- Topic 4 ---------------------------------------------
+
+
+Q1: What is the difference between running JavaScript in the browser and in Node.js? 
+A: JavaScript runs on the client side on the broswer
+   Node.js runs pm the server side outside the browser, so it does not require updating the browser to get the latest ECMAScript version
+
+Q2: Why must we stop and start the server again after we change its code? 
+A: Because the running program loads the files into the computer memory only once when it starts up.
+
+
+Q3: Why can the browser stop the front-end from talking to a server on another port? 
+A: Because of same-origin policy. web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins includes the right CORS headers.
+
+
+--------------------------------------------- Topic 5 ---------------------------------------------
+
+Q1: Why must we send values as parameters ($1) instead of joining them into the SQL text?
+A:  Because directly concatenating values into the SQL text can lead to SQL injection vulnerabilities.
+
+
+Q2: Where do we find the rows that pool.query returned? 
+A:  On the rows property of the result object that pool.query returns.
+
+Q3: Why is the database password written in the .env file, not in the code? 
+A:  Because putting the passowrd in a .env file keeps it out of source code, and it can be easily exluded from uploading it onto Github using .gitignore file.
